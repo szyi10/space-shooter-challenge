@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  font-family: "VT323", monospace;
+}
+
+canvas {
+  border: 1px solid #fff;
+  display: none;
+  /* display: block; */
+  margin: 0 auto;
+}
+
+.start-screen {
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 802px;
+  height: 802px;
+  border: 1px solid #fff;
+  color: white;
+}
+
+.start-screen h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.start-screen button {
+  padding: 10px 20px;
+  width: 300px;
+  font-size: 32px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.start-screen button:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.start-screen button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.start-screen-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.start-screen footer {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.start-screen footer p {
+  margin: 6px;
+}
+
+.pause-menu {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #000;
+  padding: 20px;
+  border: 1px solid white;
+  color: white;
+}
+
+.pause-menu h2 {
+  margin-bottom: 20px;
+}
+
+.pause-menu-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pause-menu button {
+  padding: 10px 20px;
+  width: 200px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.pause-menu button:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.game-over {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #000;
+  padding: 20px;
+  border: 1px solid white;
+  color: white;
+}
+
+.game-over h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.game-over .score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.score p {
+  margin: 0;
+  font-size: 24px;
+}
+
+.score span {
+  margin-bottom: 20px;
+}
+
+.game-over button {
+  padding: 10px 20px;
+  width: 200px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.game-over button:hover {
+  transform: translateY(-2px) scale(1.01);
+}

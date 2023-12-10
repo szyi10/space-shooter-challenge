@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Shooter Challenge</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/spaceship_small_red.png"
+      type="image/png"
+    />
+  </head>
+  <body>
+    <!-- Start Screen -->
+    <div class="start-screen">
+      <h1>Space Shooter Challenge</h1>
+      <div class="start-screen-buttons">
+        <button type="button" id="startButton">Start Game</button>
+        <button type="button" disabled>Records</button>
+        <button type="button" disabled>Instruction</button>
+        <button type="button" disabled>Settings</button>
+      </div>
+      <footer>
+        <a href="#">github</a>
+        <p>
+          made by <a href="https://www.szyi.xyz" target="_blank">szyi</a> &copy;
+          2023
+        </p>
+      </footer>
+    </div>
+
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas" width="800" height="800"></canvas>
+
+    <!-- Pause Menu -->
+    <div class="pause-menu">
+      <h2>Paused</h2>
+      <div class="pause-menu-buttons">
+        <button id="resumeButton">Resume</button>
+        <button id="quitButton">Quit to Menu</button>
+      </div>
+    </div>
+
+    <!-- Game over Screen -->
+    <div class="game-over">
+      <h2>Game Over</h2>
+      <div class="score">
+        <p>Score:</p>
+        <span class="score-element"></span>
+      </div>
+      <button id="closeButton">Quit to Menu</button>
+    </div>
+
+    <script src="./js/screen.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/enemy.js"></script>
+    <script src="./js/ship.js"></script>
+  </body>
+</html>
