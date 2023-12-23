@@ -33,13 +33,16 @@ function chooseRandomEnemyType() {
 }
 
 function drawHealthBar(enemy) {
-  const healthBarWidth = 30
+  const healthBarWidth = enemyTypes[enemy.type].width
   const healthBarHeight = 5
 
   const healthBarFill =
     (enemy.health / enemyTypes[enemy.type].initialHealth) * healthBarWidth
 
   ctx.fillStyle = "red"
+  ctx.fillRect(enemy.x, enemy.y - 10, healthBarWidth, healthBarHeight)
+
+  ctx.fillStyle = "green"
   ctx.fillRect(enemy.x, enemy.y - 10, healthBarFill, healthBarHeight)
 }
 
