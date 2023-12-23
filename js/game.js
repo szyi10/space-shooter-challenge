@@ -17,14 +17,6 @@ function drawBackground() {
   ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height)
 }
 
-// Draw simple elements of background (stars, asteroids)
-// function drawEnviroment() {
-//   ctx.fillStyle = "black"
-//   ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-//   drawStars()
-// }
-
 function drawUI() {
   ctx.fillStyle = "white"
   ctx.font = "42px VT323"
@@ -55,7 +47,7 @@ function main() {
   resetGame()
 
   // Movement event listeners
-  listenMovement()
+  handleKeyPress()
 
   // Creating new enemies each 2 seconds
   enemiesInterval = setInterval(createEnemies, 2000)
@@ -68,10 +60,7 @@ function main() {
   listenShooting()
 
   function update() {
-    if (moveLeft) moveShipLeft()
-    if (moveRight) moveShipRight()
-    if (moveUp) moveShipUp()
-    if (moveDown) moveShipDown()
+    updateShipMovement()
 
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     drawBackground()
