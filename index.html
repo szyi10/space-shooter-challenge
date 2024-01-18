@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Space Shooter Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <link
       rel="shortcut icon"
@@ -12,53 +18,49 @@
     />
   </head>
   <body>
-    <!-- Start Screen -->
-    <div class="start-screen">
-      <h1>Space Shooter Challenge</h1>
-      <div class="start-screen-buttons">
-        <button type="button" id="startButton">Start Game</button>
-        <button type="button" disabled>Records</button>
-        <button type="button" disabled>Instruction</button>
-        <button type="button" disabled>Settings</button>
+    <div class="container">
+      <!-- Starting scren -->
+      <div id="startingScreen" class="starting-screen">
+        <h1>Space Shooter Challenge</h1>
+        <div class="starting-screen-buttons">
+          <button id="startButton">START</button>
+          <button>RECORDS</button>
+          <button>CONTROLS</button>
+          <button>SETTINGS</button>
+        </div>
+        <p>v0.1 - 2024 &copy; szyi</p>
       </div>
-      <footer>
-        <a
-          href="https://github.com/szyi10/space-shooter-challenge"
-          target="_blank"
-          >github</a
-        >
-        <p>
-          made by <a href="https://www.szyi.xyz" target="_blank">szyi</a> &copy;
-          2023
-        </p>
-      </footer>
+
+      <!-- Game -->
+      <div class="gamebar">
+        <div class="health-bar">
+          <div class="red-health"></div>
+          <div id="playerHealthGray" class="gray-health"></div>
+          <div id="playerHealth" class="blue-health"></div>
+          <h5 id="playerName" class="ship-name">Rokcy</h5>
+        </div>
+      </div>
+
+      <div id="resetScreen">
+        <h3>Game Over</h3>
+        <div>
+          <p id="resetBackHomeScreen">H</p>
+          <p id="resetButton">R</p>
+        </div>
+      </div>
+
+      <canvas></canvas>
     </div>
 
-    <!-- Game Canvas -->
-    <canvas id="gameCanvas" width="800" height="800"></canvas>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"
+      integrity="sha512-6zTDRWNxo8vI6JZYDCwhrJpg5icK3P4HNnW3czsO5Scb3lAoPDam+/wF3eog4hxcl0h44d0XlIcFkuoSaWHQ2g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-    <!-- Pause Menu -->
-    <div class="pause-menu">
-      <h2>Paused</h2>
-      <div class="pause-menu-buttons">
-        <button id="resumeButton">Resume</button>
-        <button id="quitButton">Quit to Menu</button>
-      </div>
-    </div>
-
-    <!-- Game over Screen -->
-    <div class="game-over">
-      <h2>Game Over</h2>
-      <div class="score">
-        <p>Score:</p>
-        <span class="score-element"></span>
-      </div>
-      <button id="closeButton">Quit to Menu</button>
-    </div>
-
-    <script src="./js/screen.js"></script>
-    <script src="./js/game.js"></script>
-    <script src="./js/enemy.js"></script>
-    <script src="./js/ship.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/classes.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
